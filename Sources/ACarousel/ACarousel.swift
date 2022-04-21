@@ -40,7 +40,7 @@ public struct ACarousel<Data, ID, Content> : View where Data : RandomAccessColle
             ForEach(viewModel.data, id: viewModel.dataId) {
                 content($0)
                     .frame(width: viewModel.itemWidth)
-                    .scaleEffect(x: 1, y: viewModel.itemScaling($0), anchor: .center)
+                    .scaleEffect(viewModel.itemScaling($0), anchor: .center)
             }
         }
         .frame(width: proxy.size.width, height: proxy.size.height, alignment: .leading)
